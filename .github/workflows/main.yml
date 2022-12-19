@@ -18,8 +18,8 @@ jobs:
     - name: Nexus IQ Policy Evaluation
       uses: sonatype-nexus-community/iq-github-action@master
       with:
-        serverUrl: http://nexus-iq-server
-        username: username
+        serverUrl: http://60.0.11.26:8081/repository/my-demo-repo/
+        username: admin
         password: ${{ secrets.NEXUS_PASSWORD }}
         applicationId: sample-maven
         stage: Build
