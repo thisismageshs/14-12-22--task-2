@@ -25,4 +25,4 @@ jobs:
         repository: demo-maven-repo
         coordinates: groupId=com.example artifactId=app version=1.0.0
         assets: extension=jar
-        filename: ./target/app-1.0.0.jar
+        filename: ./target/demo.war
