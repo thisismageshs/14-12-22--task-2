@@ -1,4 +1,4 @@
-name: Maven CI with Nexus IQ
+name: Java with Nexus Repository
 
 on: [push]
 
@@ -15,12 +15,14 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn package --file pom.xml
-    - name: Nexus IQ Policy Evaluation
-      uses: sonatype-nexus-community/iq-github-action@master
+    - name: Nexus Repo Publish
+      uses: sonatype-nexus-community/nexus-repo-github-action@master
       with:
         serverUrl: http://13.232.164.49:8081/
         username: admin
         password: ${{ secrets.NEXUS_PASSWORD }}
-        applicationId: sample-maven
-        stage: Build
-        target: ./target/
+        format: maven2
+        repository: demo-maven-repo
+        coordinates: groupId=com.example artifactId=app version=1.0.0
+        assets: extension=jar
+        filename: ./target/app-1.0.0.jar
