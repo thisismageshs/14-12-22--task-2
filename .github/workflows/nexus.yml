@@ -22,7 +22,7 @@ jobs:
         username: admin
         password: ${{ secrets.NEXUS_PASSWORD }}
         format: maven2
-        repository: maven-releases
+        repository: maven-central
         coordinates: groupId=com.example artifactId=app version=1.0.0
         assets: extension=jar
         filename: ./target/demo.war
