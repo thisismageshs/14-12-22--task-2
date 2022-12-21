@@ -1,4 +1,4 @@
-name: Java with Nexus Repository
+name: Java maven with Nexus Repository
 
 on: [push]
 
